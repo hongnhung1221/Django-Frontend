@@ -1,5 +1,5 @@
 /* AXIOS */
-import axios from "axios";
+import axios from "./axios";
 
 import {
   PRODUCT_LIST_REQUEST,

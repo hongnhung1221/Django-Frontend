@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "./axios";
 
 import {
   ORDER_CREATE_REQUEST,
@@ -64,7 +64,6 @@ export const createOrder = (order) => async (dispatch, getState) => {
   }
 };
 
-
 export const getOrderDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -122,7 +121,6 @@ export const payOrder = (id, paymentResult) => async (dispatch, getState) => {
       config
     );
 
-
     dispatch({
       type: ORDER_PAY_SUCCESS,
       payload: data,
@@ -137,7 +135,6 @@ export const payOrder = (id, paymentResult) => async (dispatch, getState) => {
     });
   }
 };
-
 
 export const listMyOrders = () => async (dispatch, getState) => {
   try {
@@ -157,7 +154,6 @@ export const listMyOrders = () => async (dispatch, getState) => {
     };
 
     const { data } = await axios.get(`/api/orders/myorders/`, config);
-
 
     dispatch({
       type: ORDER_LIST_MY_SUCCESS,
