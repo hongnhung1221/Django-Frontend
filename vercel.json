@@ -1,5 +1,5 @@
 {
-  "functions": {
-    "nodeVersion": "18.x"
-  }
+  "framework": "create-react-app",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build"
 }
