@@ -25,7 +25,6 @@ import {
   PRODUCT_TOP_REQUEST,
 } from "../constants/productConstants";
 
-
 export const listProducts =
   (keyword = "") =>
   async (dispatch) => {
@@ -73,7 +72,6 @@ export const listProductDetails = (id) => async (dispatch) => {
     });
   }
 };
-
 
 export const deleteProduct = (id) => async (dispatch, getState) => {
   try {
@@ -192,7 +190,6 @@ export const createProductReview =
         type: PRODUCT_CREATE_REVIEW_REQUEST,
       });
 
-
       const {
         userLogin: { userInfo },
       } = getState();
@@ -224,7 +221,6 @@ export const createProductReview =
       });
     }
   };
-
 
 export const listTopProducts = () => async (dispatch) => {
   try {

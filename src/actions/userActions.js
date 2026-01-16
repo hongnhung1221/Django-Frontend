@@ -1,4 +1,4 @@
-import axios from "./cd axios";
+import axios from "./axios";
 
 import {
   USER_LOGIN_REQUEST,
@@ -64,12 +64,9 @@ export const login = (email, password) => async (dispatch) => {
   }
 };
 
-
 export const logout = () => (dispatch) => {
-  
   localStorage.removeItem("userInfo");
 
-  
   dispatch({
     type: USER_LOGOUT,
   });
@@ -85,7 +82,6 @@ export const logout = () => (dispatch) => {
     type: USER_LIST_RESET,
   });
 };
-
 
 export const register = (name, email, password) => async (dispatch) => {
   try {
@@ -105,18 +101,15 @@ export const register = (name, email, password) => async (dispatch) => {
       config
     );
 
-
     dispatch({
       type: USER_REGISTER_SUCCESS,
       payload: data,
     });
 
-
     dispatch({
       type: USER_LOGIN_SUCCESS,
       payload: data,
     });
-
 
     localStorage.setItem("userInfo", JSON.stringify(data));
   } catch (error) {
@@ -130,13 +123,11 @@ export const register = (name, email, password) => async (dispatch) => {
   }
 };
 
-
 export const getUserDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch({
       type: USER_DETAILS_REQUEST,
     });
-
 
     const {
       userLogin: { userInfo },
@@ -251,7 +242,6 @@ export const deleteUser = (id) => async (dispatch, getState) => {
       type: USER_DELETE_REQUEST,
     });
 
-   
     const {
       userLogin: { userInfo },
     } = getState();
@@ -259,7 +249,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
     const config = {
       headers: {
         "Content-type": "application/json",
-        Authorization: `Bearer ${userInfo.token}`
+        Authorization: `Bearer ${userInfo.token}`,
       },
     };
 
@@ -286,7 +276,6 @@ export const updateUser = (user) => async (dispatch, getState) => {
       type: USER_UPDATE_REQUEST,
     });
 
-  
     const {
       userLogin: { userInfo },
     } = getState();
